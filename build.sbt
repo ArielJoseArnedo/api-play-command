@@ -1,7 +1,7 @@
 name := """api-play-command"""
 organization := "co.com.ajac"
 
-version := "1.0-SNAPSHOT"
+version := "1.0.1"
 
 lazy val root = (project in file("."))
   .enablePlugins(PlayJava)
