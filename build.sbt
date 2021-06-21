@@ -1,15 +1,11 @@
 name := """api-play-command"""
 organization := "co.com.ajac"
 
-version := "1.0.1"
+version := "1.0.2"
 
 lazy val root = (project in file("."))
   .enablePlugins(PlayJava)
-  .enablePlugins(BuildInfoPlugin)
   .settings(
-    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
-    buildInfoPackage := "co.com.ajac",
-    buildInfoOptions += BuildInfoOption.ToJson,
     jacocoReportSettings := JacocoReportSettings(
       "Jacoco Coverage Report auth mobile app",
       None,
@@ -19,7 +15,7 @@ lazy val root = (project in file("."))
     )
   )
 
-scalaVersion := "2.13.5"
+scalaVersion := "2.12.4"
 
 resolvers += "jitpack" at "https://jitpack.io"
 
