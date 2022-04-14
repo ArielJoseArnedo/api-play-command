@@ -10,7 +10,7 @@ resolvers += "jitpack" at "https://jitpack.io"
 
 libraryDependencies ++= Seq(
   guice,
-  "com.github.ArielJoseArnedo"    % "api-command"        % "3.1.0",
+  "com.github.ArielJoseArnedo"    % "api-command"        % "3.1.1",
   "net.aichler"                   % "jupiter-interface"  % JupiterKeys.jupiterVersion.value  % Test
 )
 
