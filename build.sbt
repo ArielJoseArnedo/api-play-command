@@ -4,6 +4,8 @@ organization := "co.com.ajac"
 lazy val root = (project in file("."))
   .enablePlugins(PlayJava)
 
+javacOptions ++= Seq("-source", "17", "-target", "17")
+
 scalaVersion := "2.13.6"
 
 resolvers += "jitpack" at "https://jitpack.io"
