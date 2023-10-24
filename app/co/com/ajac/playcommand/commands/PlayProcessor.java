@@ -1,9 +1,13 @@
 package co.com.ajac.playcommand.commands;
 
-import co.com.ajac.messaging.events.Event;
-import co.com.ajac.concurrency.FutureEither;
 import co.com.ajac.base.errors.AppError;
-import co.com.ajac.infrastructure.api.commands.*;
+import co.com.ajac.concurrency.FutureEither;
+import co.com.ajac.infrastructure.api.commands.Command;
+import co.com.ajac.infrastructure.api.commands.CommandUtil;
+import co.com.ajac.infrastructure.api.commands.Processor;
+import co.com.ajac.infrastructure.api.commands.Request;
+import co.com.ajac.infrastructure.api.commands.Response;
+import co.com.ajac.messaging.events.Event;
 import com.fasterxml.jackson.databind.JsonNode;
 import io.vavr.Function3;
 import io.vavr.Tuple;
