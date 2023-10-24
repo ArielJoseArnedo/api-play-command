@@ -1,6 +1,6 @@
 package co.com.ajac.playcommand.commands;
 
-import co.com.ajac.base.events.Publisher;
+import co.com.ajac.messaging.publishers.PublisherProvider;
 import co.com.ajac.infrastructure.api.commands.CommandProvider;
 import io.vavr.collection.List;
 import play.mvc.Controller;
@@ -11,10 +11,10 @@ import javax.inject.Inject;
 public class CommandProcessor extends Controller implements PlayProcessor {
 
     private final ProviderManager providerManager;
-    private final Publisher publisher;
+    private final PublisherProvider publisher;
 
     @Inject
-    public CommandProcessor(ProviderManager providerManager, Publisher publisher) {
+    public CommandProcessor(ProviderManager providerManager, PublisherProvider publisher) {
         this.providerManager = providerManager;
         this.publisher = publisher;
     }
@@ -25,7 +25,7 @@ public class CommandProcessor extends Controller implements PlayProcessor {
     }
 
     @Override
-    public Publisher publisher() {
+    public PublisherProvider publisher() {
         return publisher;
     }
 }

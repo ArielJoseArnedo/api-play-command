@@ -1,6 +1,6 @@
 package co.com.ajac.playcommand.commands;
 
-import co.com.ajac.base.events.Event;
+import co.com.ajac.messaging.events.Event;
 import co.com.ajac.concurrency.FutureEither;
 import co.com.ajac.base.errors.AppError;
 import co.com.ajac.infrastructure.api.commands.*;
@@ -52,6 +52,7 @@ public interface PlayProcessor extends Processor, CommandUtil {
         return function3.apply(pathUrlOpt, commandName, commandBody);
     }
 
+    @SuppressWarnings("unchecked")
     default CompletionStage<Result> toExecuteCommandAndRequest(FutureEither<AppError, Tuple2<Command, Request>> commandAndRequest) {
         return commandAndRequest
           .flatMap(commandRequestTuple2 -> (FutureEither<AppError, Tuple2<Option<Response>, List<Event>>>) commandRequestTuple2._1().execute(commandRequestTuple2._2()))
